@@ -5,26 +5,67 @@ import java.util.Map;
 
 public class DrugRegistry {
 
-    private static Map<String, DrugModel> drugs = null;
-    public static DrugModel WEED = addDrug(DrugModel.of("weed", new DrugEffect(Effect.SLOWNESS), new DrugEffect(Effect.FOG)));
-    public static DrugModel METH = addDrug(DrugModel.of("meth", new DrugEffect(Effect.VOID_PULSE)));
-    public static DrugModel LSD = addDrug(DrugModel.of("lsd", new DrugEffect(Effect.ACID_WARP)));
-    public static DrugModel MUSHROOMS = addDrug(DrugModel.of("mushroom"));
-    public static DrugModel HEROINE = addDrug(DrugModel.of("heroine"));
-    public static DrugModel ALCOHOL = addDrug(DrugModel.of("alcohol", new DrugEffect(Effect.NAUSEA)));
-    public static DrugModel TABACCO = addDrug(DrugModel.of("tabacco"));
-    public static DrugModel COFFEE = addDrug(DrugModel.of("coffee"));
+    private static Map<DrugId, DrugModel> drugs = null;
 
     private DrugRegistry() {
     }
 
+    public static void registerDrugs() {
+        addDrug(new DrugModel.Builder()
+                .setId(DrugId.WEED)
+                .addEffect(new DrugEffect(EffectType.SLOWNESS))
+                .addEffect(new DrugEffect(EffectType.FOG))
+                .build()
+        );
+
+        addDrug(new DrugModel.Builder()
+                .setId(DrugId.METH)
+                .addEffect(new DrugEffect(EffectType.VOID_PULSE))
+                .build()
+        );
+        addDrug(new DrugModel.Builder()
+                .setId(DrugId.LSD)
+                .addEffect(new DrugEffect(EffectType.ACID_WARP))
+                .build()
+        );
+        addDrug(new DrugModel.Builder()
+                .setId(DrugId.MUSHROOMS)
+                .build()
+        );
+
+        addDrug(new DrugModel.Builder()
+                .setId(DrugId.HEROINE)
+                .build()
+        );
+
+        addDrug(new DrugModel.Builder()
+                .setId(DrugId.ALCOHOL)
+                .addEffect(new DrugEffect(EffectType.NAUSEA))
+                .build()
+        );
+
+        addDrug(new DrugModel.Builder()
+                .setId(DrugId.TABACCO)
+                .build()
+        );
+
+        addDrug(new DrugModel.Builder()
+                .setId(DrugId.COFFEE)
+                .build()
+        );
+    }
+
     private static DrugModel addDrug(DrugModel model) {
         if (drugs == null) drugs = new HashMap<>();
+        if (getDrug(model.getId()) != null) {
+            System.err.println("Drug " + model.getId().name() + " was tried to be registered twice !");
+            return getDrug(model.getId());
+        }
         drugs.put(model.getId(), model);
         return model;
     }
 
-    public static DrugModel getById(String id) {
+    public static DrugModel getDrug(DrugId id) {
         return drugs.get(id);
     }
 }

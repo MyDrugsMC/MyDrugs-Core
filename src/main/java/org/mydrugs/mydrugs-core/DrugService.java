@@ -1,7 +1,7 @@
 package org.mydrugs.mydrugs.core;
 
 public class DrugService {
-    EffectPort effectPort;
+    private final EffectPort effectPort;
 
     public DrugService(EffectPort effectPort) {
         this.effectPort = effectPort;
