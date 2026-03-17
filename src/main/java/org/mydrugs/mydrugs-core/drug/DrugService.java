@@ -1,7 +1,10 @@
-package org.mydrugs.mydrugs.core;
+package org.mydrugs.mydrugs.core.drug;
+
+import org.mydrugs.mydrugs.core.drug.effect.DrugEffect;
+import org.mydrugs.mydrugs.core.drug.effect.EffectPort;
 
 public class DrugService {
-    EffectPort effectPort;
+    private final EffectPort effectPort;
 
     public DrugService(EffectPort effectPort) {
         this.effectPort = effectPort;
