@@ -1,4 +1,6 @@
-package org.mydrugs.mydrugs.core;
+package org.mydrugs.mydrugs.core.drug;
+
+import org.mydrugs.mydrugs.core.drug.effect.DrugEffect;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +28,7 @@ public class DrugModel {
 
     public static class Builder {
         private DrugId id = null;
-        private List<DrugEffect> effects = new ArrayList<>();
+        private final List<DrugEffect> effects = new ArrayList<>();
 
         public Builder setId(DrugId id) {
             this.id = id;

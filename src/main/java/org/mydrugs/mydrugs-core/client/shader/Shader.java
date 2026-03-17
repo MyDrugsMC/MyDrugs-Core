@@ -1,10 +1,9 @@
-package org.mydrugs.mydrugs.core.drug.effect.shader;
+package org.mydrugs.mydrugs.core.client.shader;
 
 public abstract class Shader {
     private final String name;
     private final String formattedUniformName;
 
-    protected boolean enabled = false;
     protected float time = 0.0F;
     protected float deltaTime = 0.05F;
 
@@ -36,14 +35,6 @@ public abstract class Shader {
 
     public String getFormattedUniformName() {
         return formattedUniformName;
-    }
-
-    public boolean isEnabled() {
-        return enabled;
-    }
-
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
     }
 
     public void setDeltaTime(float deltaTime) {

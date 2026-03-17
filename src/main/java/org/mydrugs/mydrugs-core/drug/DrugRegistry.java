@@ -1,4 +1,7 @@
-package org.mydrugs.mydrugs.core;
+package org.mydrugs.mydrugs.core.drug;
+
+import org.mydrugs.mydrugs.core.drug.effect.DrugEffect;
+import org.mydrugs.mydrugs.core.drug.effect.EffectType;
 
 import java.util.HashMap;
 import java.util.Map;

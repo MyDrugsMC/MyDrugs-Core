@@ -1,18 +1,27 @@
-package org.mydrugs.mydrugs.core.drug.effect.shader;
+package org.mydrugs.mydrugs.core.client.shader;
 
 import org.mydrugs.mydrugs.core.Core;
+import org.mydrugs.mydrugs.core.client.ClientState;
+import org.mydrugs.mydrugs.core.drug.effect.EffectType;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 // Works ONLY ON CLIENT. NOT SERVER
 public abstract class ClientShaderManager<T extends Shader> {
-    private float ticksLeft = 0.0F;
-    private T currentShader = null;
-    private final List<T> shaders = new ArrayList<>();
 
-    public void register(T shader) {
-        shaders.add(shader);
+    private final ClientState clientState;
+    private final Map<EffectType, T> shaders = new HashMap<>();
+    private float ticksLeft = 0.0F;
+
+    public ClientShaderManager(ClientState clientState) {
+        this.clientState = clientState;
+    }
+
+    public void register(EffectType type, T shader) {
+        shaders.put(type, shader);
     }
 
     public void tick() {
@@ -22,42 +31,37 @@ public abstract class ClientShaderManager<T extends Shader> {
 
         ticksLeft--;
 
-        if (currentShader == null) {
+        if (!clientState.hasShader()) {
             return;
         }
 
         if (ticksLeft <= 0) {
-            currentShader.setEnabled(false);
-            currentShader = null;
+            clientState.setShader(null);
         }
     }
 
-    public T getCurrentShader() {
-        return currentShader;
+    public Shader getCurrentShader() {
+        return clientState.getShader();
     }
 
-    public void start(int durationTicks, Class<? extends T> clazz) {
+    public void start(int durationTicks, EffectType type) {
         ticksLeft = durationTicks;
 
-        T shader = shaders.stream()
-                .filter(sh -> sh.getClass() == clazz)
-                .findFirst()
-                .orElse(null);
+        T shader = shaders.get(type);
 
         if (shader == null) {
-            Core.getLOGGER().warning("Shader "+clazz.getName()+" is not initialized!");
+            Core.getLOGGER().warning("Shader " + type.name() + " is not initialized!");
             return;
         }
 
-        if (currentShader != null) {
-            currentShader.setEnabled(false);
+        if (clientState.hasShader()) {
+            clientState.setShader(null);
         }
 
-        currentShader = shader;
-        currentShader.setEnabled(true);
+        clientState.setShader(shader);
     }
 
     public List<T> getShaders() {
-        return shaders;
+        return new ArrayList<>(shaders.values());
     }
 }

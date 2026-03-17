@@ -1,4 +1,4 @@
-package org.mydrugs.mydrugs.core;
+package org.mydrugs.mydrugs.core.drug.effect;
 
 public class DrugEffect {
     private final EffectType type;
@@ -12,6 +12,18 @@ public class DrugEffect {
     }
 
     public DrugEffect(EffectType type) {
-        this(type, 10*5, 1);
+        this(type, 20 * 5, 1);
+    }
+
+    public EffectType getType() {
+        return type;
+    }
+
+    public int getBaseDuration() {
+        return baseDuration;
+    }
+
+    public int getBasePotency() {
+        return basePotency;
     }
 }
