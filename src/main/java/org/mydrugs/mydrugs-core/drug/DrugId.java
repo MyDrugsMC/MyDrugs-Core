@@ -2,11 +2,26 @@ package org.mydrugs.mydrugs.core.drug;
 
 public enum DrugId {
     WEED,
+    HASH,
     METH,
+    COCAINE,
+    CRACK,
+    MDMA,
     LSD,
     MUSHROOMS,
-    HEROINE,
+    SALVIA,
+    DMT,
+    HEROIN,
+    MORPHINE,
+    FENTANYL,
+    OPIUM,
+    KETAMINE,
+    PCP,
+    DXM,
     ALCOHOL,
-    TABACCO,
-    COFFEE
+    BENZODIAZEPINE,
+    BARBITURATE,
+    TOBACCO,
+    COFFEE,
+    NITROUS_OXIDE
 }
