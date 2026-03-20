@@ -62,7 +62,6 @@ public final class DrugRegistry {
         addDrug(new DrugModel.Builder()
                 .setId(DrugId.MDMA)
                 .setCategory(DrugCategory.EMPATHOGEN)
-                .addEffect(new DrugEffect(EffectType.FOG, 20 * 14, 1))
                 .addEffect(new DrugEffect(EffectType.VOID_PULSE, 20 * 12, 2))
                 .build()
         );
@@ -71,15 +70,13 @@ public final class DrugRegistry {
                 .setId(DrugId.LSD)
                 .setCategory(DrugCategory.PSYCHEDELIC)
                 .addEffect(new DrugEffect(EffectType.ACID_WARP, 20 * 30, 3))
-                .addEffect(new DrugEffect(EffectType.FOG, 20 * 20, 2))
                 .build()
         );
 
         addDrug(new DrugModel.Builder()
                 .setId(DrugId.MUSHROOMS)
                 .setCategory(DrugCategory.PSYCHEDELIC)
-                .addEffect(new DrugEffect(EffectType.ACID_WARP, 20 * 24, 2))
-                .addEffect(new DrugEffect(EffectType.FOG, 20 * 18, 1))
+                .addEffect(new DrugEffect(EffectType.EVENT_HORIZON, 20 * 18, 1))
                 .build()
         );
 
