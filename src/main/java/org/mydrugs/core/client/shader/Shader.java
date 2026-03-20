@@ -1,4 +1,4 @@
-package org.mydrugs.mydrugs.core.client.shader;
+package org.mydrugs.core.client.shader;
 
 public abstract class Shader {
     private final String name;

@@ -1,5 +1,4 @@
-package org.mydrugs.mydrugs.core.drug.effect;
-
+package org.mydrugs.core.drug.effect;
 public enum EffectType {
     NAUSEA,
     SLOWNESS,

@@ -1,8 +1,8 @@
-package org.mydrugs.mydrugs.core.client.shader;
+package org.mydrugs.core.client.shader;
 
-import org.mydrugs.mydrugs.core.Core;
-import org.mydrugs.mydrugs.core.client.ClientState;
-import org.mydrugs.mydrugs.core.drug.effect.EffectType;
+import org.mydrugs.core.Core;
+import org.mydrugs.core.client.ClientState;
+import org.mydrugs.core.drug.effect.EffectType;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,6 +1,6 @@
-package org.mydrugs.mydrugs.core.client;
+package org.mydrugs.core.client;
 
-import org.mydrugs.mydrugs.core.client.shader.Shader;
+import org.mydrugs.core.client.shader.Shader;
 
 public class ClientState {
     private Shader shader;

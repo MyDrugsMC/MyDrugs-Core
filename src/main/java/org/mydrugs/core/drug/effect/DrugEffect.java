@@ -1,4 +1,4 @@
-package org.mydrugs.mydrugs.core.drug.effect;
+package org.mydrugs.core.drug.effect;
 
 public class DrugEffect {
     private final EffectType effectType;

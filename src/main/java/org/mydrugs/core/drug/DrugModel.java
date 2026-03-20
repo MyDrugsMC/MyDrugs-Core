@@ -1,6 +1,6 @@
-package org.mydrugs.mydrugs.core.drug;
+package org.mydrugs.core.drug;
 
-import org.mydrugs.mydrugs.core.drug.effect.DrugEffect;
+import org.mydrugs.core.drug.effect.DrugEffect;
 
 import java.util.ArrayList;
 import java.util.List;

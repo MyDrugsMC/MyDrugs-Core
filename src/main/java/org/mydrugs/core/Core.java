@@ -1,4 +1,4 @@
-package org.mydrugs.mydrugs.core;
+package org.mydrugs.core;
 
 import java.util.logging.Logger;
 

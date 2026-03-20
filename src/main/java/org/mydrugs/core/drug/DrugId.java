@@ -1,4 +1,4 @@
-package org.mydrugs.mydrugs.core.drug;
+package org.mydrugs.core.drug;
 
 public enum DrugId {
     WEED,

@@ -1,8 +1,8 @@
-package org.mydrugs.mydrugs.core.drug;
+package org.mydrugs.core.drug;
 
-import org.mydrugs.mydrugs.core.Core;
-import org.mydrugs.mydrugs.core.drug.effect.DrugEffect;
-import org.mydrugs.mydrugs.core.drug.effect.EffectType;
+import org.mydrugs.core.Core;
+import org.mydrugs.core.drug.effect.DrugEffect;
+import org.mydrugs.core.drug.effect.EffectType;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,9 +10,6 @@ import java.util.Map;
 public final class DrugRegistry {
 
     private static final Map<DrugId, DrugModel> drugs = new HashMap<>();
-
-    private DrugRegistry() {
-    }
 
     public static void registerDrugs() {
         if (!drugs.isEmpty()) {
@@ -203,7 +200,7 @@ public final class DrugRegistry {
         );
     }
 
-    private static DrugModel addDrug(DrugModel model) {
+    public static DrugModel addDrug(DrugModel model) {
         if (drugs.containsKey(model.getId())) {
             System.err.println("Drug " + model.getId().name() + " was tried to be registered twice!");
             return drugs.get(model.getId());

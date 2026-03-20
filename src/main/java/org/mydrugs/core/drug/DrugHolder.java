@@ -1,6 +1,6 @@
-package org.mydrugs.mydrugs.core.drug;
+package org.mydrugs.core.drug;
 
-import org.mydrugs.mydrugs.core.drug.strategy.ConsumptionStrategy;
+import org.mydrugs.core.drug.strategy.ConsumptionStrategy;
 
 public interface DrugHolder {
     DrugModel getDrugModel();

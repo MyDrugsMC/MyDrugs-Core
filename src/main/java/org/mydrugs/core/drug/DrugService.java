@@ -1,8 +1,8 @@
-package org.mydrugs.mydrugs.core.drug;
+package org.mydrugs.core.drug;
 
-import org.mydrugs.mydrugs.core.drug.effect.DrugEffect;
-import org.mydrugs.mydrugs.core.drug.effect.EffectPort;
-import org.mydrugs.mydrugs.core.drug.strategy.ConsumptionStrategy;
+import org.mydrugs.core.drug.effect.DrugEffect;
+import org.mydrugs.core.drug.effect.EffectPort;
+import org.mydrugs.core.drug.strategy.ConsumptionStrategy;
 
 public class DrugService {
     private final EffectPort effectPort;

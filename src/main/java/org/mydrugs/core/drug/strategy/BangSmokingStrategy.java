@@ -1,6 +1,7 @@
-package org.mydrugs.mydrugs.core.drug.strategy;
+package org.mydrugs.core.drug.strategy;
 
-import org.mydrugs.mydrugs.core.drug.effect.DrugEffect;
+
+import org.mydrugs.core.drug.effect.DrugEffect;
 
 public class BangSmokingStrategy implements ConsumptionStrategy {
     @Override
