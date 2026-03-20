@@ -6,6 +6,14 @@ public enum EffectType {
     CHROMATIC_DREAM,
     ACID_WARP,
     VOID_PULSE,
-    FOG
+    FOG,
+    IRIDESCENT_HAZE,
+    LUCID_DREAM,
+    MELT_REALITY,
+    VELVET_ECHO,
+    EVENT_HORIZON,
+    NEON_CELLS,
+    OPAL_WAVE,
+    QUANTUM_FLOWER
 }
 
