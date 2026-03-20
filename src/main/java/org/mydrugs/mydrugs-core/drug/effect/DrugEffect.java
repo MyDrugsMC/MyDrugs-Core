@@ -1,22 +1,22 @@
 package org.mydrugs.mydrugs.core.drug.effect;
 
 public class DrugEffect {
-    private final EffectType type;
+    private final EffectType effectType;
     private final int baseDuration;
     private final int basePotency;
 
+    public DrugEffect(EffectType type) {
+        this(type, 10 * 20);
+    }
+
+    public DrugEffect(EffectType type, int baseDuration) {
+        this(type, baseDuration, 1);
+    }
+
     public DrugEffect(EffectType type, int baseDuration, int basePotency) {
-        this.type = type;
+        this.effectType = type;
         this.baseDuration = baseDuration;
         this.basePotency = basePotency;
-    }
-
-    public DrugEffect(EffectType type) {
-        this(type, 20 * 5, 1);
-    }
-
-    public EffectType getType() {
-        return type;
     }
 
     public int getBaseDuration() {
@@ -25,5 +25,9 @@ public class DrugEffect {
 
     public int getBasePotency() {
         return basePotency;
+    }
+
+    public EffectType getEffectType() {
+        return effectType;
     }
 }

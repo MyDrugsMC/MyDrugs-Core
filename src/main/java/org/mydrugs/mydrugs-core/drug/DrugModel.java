@@ -8,13 +8,15 @@ import java.util.List;
 public class DrugModel {
     private final DrugId id;
     private final List<DrugEffect> drugEffects;
+    private final DrugCategory drugCategory;
 
     private DrugModel(DrugId id) {
-        this(id, new ArrayList<>());
+        this(id, DrugCategory.OTHER, new ArrayList<>());
     }
 
-    protected DrugModel(DrugId id, List<DrugEffect> effects) {
+    protected DrugModel(DrugId id, DrugCategory drugCategory, List<DrugEffect> effects) {
         this.id = id;
+        this.drugCategory = drugCategory;
         this.drugEffects = effects;
     }
 
@@ -26,9 +28,15 @@ public class DrugModel {
         return drugEffects;
     }
 
+
+    public DrugCategory getDrugCategory() {
+        return drugCategory;
+    }
+
     public static class Builder {
-        private DrugId id = null;
         private final List<DrugEffect> effects = new ArrayList<>();
+        private DrugId id = null;
+        private DrugCategory drugCategory = DrugCategory.OTHER;
 
         public Builder setId(DrugId id) {
             this.id = id;
@@ -40,8 +48,13 @@ public class DrugModel {
             return this;
         }
 
+        public Builder setCategory(DrugCategory drugCategory) {
+            this.drugCategory = drugCategory;
+            return this;
+        }
+
         public DrugModel build() {
-            return new DrugModel(id, effects);
+            return new DrugModel(id, drugCategory, effects);
         }
     }
 }
